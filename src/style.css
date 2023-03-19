@@ -1,0 +1,38 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100vh;
+  padding: 0 24px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.btns {
+  margin-block-start: 12px;
+}
+
+.btn {
+}
+
+.content {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+  padding: 12px 18px;
+  margin-block-start: 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  line-height: 1.42;
+  color: #222;
+  background-color: #ddd;
+  outline: none;
+  border: none;
+  resize: vertical;
+}

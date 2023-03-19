@@ -1,0 +1,21 @@
+{
+  "main": "dist/index.html",
+  "logo": "logo.png",
+  "pluginSetting": {
+    "single": true
+  },
+  "features": [
+    {
+      "code": "SQL",
+      "explain": "SQL 格式化",
+      "cmds": [
+        {
+          "type": "regex",
+          "label": "SQL 格式化",
+          "match": "/(sql)|(格式化)/gi",
+          "minLength": 3
+        }
+      ]
+    }
+  ]
+}

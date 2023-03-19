@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQL Formatter</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="btns">
+          <button id="format" class="btn">格式化</button>
+          <button id="copy" class="btn">拷贝</button>
+          <button id="clear" class="btn">清空</button>
+        </div>
+      </header>
+      <textarea
+        name="content"
+        id="content"
+        class="content"
+        placeholder="请输入内容"
+      ></textarea>
+    </div>
+    <script type="module" src="/src/main.ts" :rows="10"></script>
+  </body>
+</html>
