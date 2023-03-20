@@ -4,24 +4,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./lib/ace.js"></script>
+    <script src="./lib/ext-language_tools.js"></script>
+    <script src="./lib/theme-monokai.js"></script>
+    <script src="./lib/mode-sql.js"></script>
+    <script src="./lib/sql-formatter.min.js"></script>
+    <script defer type="module" src="./main.js"></script>
     <title>SQL Formatter</title>
   </head>
   <body>
-    <div id="app">
-      <header>
-        <div class="btns">
-          <button id="format" class="btn">格式化</button>
-          <button id="copy" class="btn">拷贝</button>
-          <button id="clear" class="btn">清空</button>
-        </div>
+    <div class="app">
+      <header class="header">
+        <section class="btns">
+          <button id="format" class="btn primary">格式化</button>
+          <button id="compress" class="btn">压缩</button>
+          <button id="copy" class="btn">复制</button>
+          <button id="download" class="btn">下载</button>
+          <button id="clear" class="btn">清除</button>
+        </section>
       </header>
-      <textarea
-        name="content"
-        id="content"
-        class="content"
-        placeholder="请输入内容"
-      ></textarea>
+      <main id="editor" class="editor"></main>
     </div>
-    <script type="module" src="/src/main.ts" :rows="10"></script>
   </body>
 </html>
