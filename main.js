@@ -20,6 +20,11 @@ function setupEditor() {
 
   setFontSize();
   switchTheme();
+
+  // todo:
+  editor.on("selectionChange", () => {
+    console.log("input");
+  });
 }
 
 function switchTheme() {
@@ -40,7 +45,6 @@ function setupEvent() {
   document.querySelector("#format").addEventListener("click", format);
   document.querySelector("#compress").addEventListener("click", compress);
   document.querySelector("#copy").addEventListener("click", copy);
-  document.querySelector("#download").addEventListener("click", download);
   document.querySelector("#clear").addEventListener("click", clear);
 }
 
@@ -51,19 +55,23 @@ function format() {
   editor.clearSelection();
 }
 
-function compress() {}
+function compress() {
+  const content = editor.getValue();
+  const compressValue = content
+    .replace(/(\s){1,}/g, " ")
+    .replace(/\\n|\\t|\\b/g, "")
+    .trim();
+  editor.setValue(compressValue);
+  editor.clearSelection();
+}
 
 function copy() {
   if (!window.utools) return;
 
   const content = editor.getValue();
   window.utools.copyText(content);
-  // todo: message
 }
 
-function download() {
-  if (!window.utools) return;
-}
 
 function clear() {
   editor.setValue("");
