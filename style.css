@@ -15,7 +15,7 @@ html {
   height: 100vh;
   min-width: 30rem;
   min-height: 30rem;
-  padding: 1.5em;
+  padding: 1em 1.5em;
   overflow: hidden;
   overflow-y: auto;
 }
@@ -33,6 +33,11 @@ html {
   flex-flow: row nowrap;
   align-items: center;
   gap: 0 2px;
+}
+
+.option input,
+.option select {
+  min-height: 36px !important;
 }
 
 .btns {
@@ -73,5 +78,5 @@ html {
 
 .font + .font {
   margin-inline-start: 4px;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }

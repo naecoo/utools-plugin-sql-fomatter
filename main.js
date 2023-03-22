@@ -15,9 +15,6 @@ function setup() {
   editor.session.setMode(new SqlMode());
   updateFontSize(0);
 
-  // todo: test
-  editor.setValue("select * from table where a = 1 and b = `sss` order by n;");
-
   // setup event
   const error = document.querySelector("#error");
   const cursor = document.querySelector("#cursor");
