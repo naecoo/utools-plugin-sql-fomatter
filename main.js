@@ -69,11 +69,9 @@ function setup() {
     } catch (e) {
       console.error(e);
       error.innerHTML = `
-<h3>格式化错误</h3>
-<p><strong>${e.message}</strong></p>
-<p>调用栈:</p>
-<pre>${e.stack.toString()}</pre>
-`;
+        <h3>格式化错误</h3>
+        <p><strong>${e.message}</strong></p>
+      `;
       error.style.display = "block";
     }
   }
