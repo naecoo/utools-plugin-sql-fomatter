@@ -1,8 +1,6 @@
 {
   "name": "my-plugin",
   "version": "1.0.0",
-  "scripts": {},
-  "keywords": [],
   "author": "naecoo<oceay7hy@gmail.com>",
   "license": "MIT"
 }

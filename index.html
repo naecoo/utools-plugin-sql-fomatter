@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./lib/purecss.min.css" />
     <link rel="stylesheet" href="./style.css" />
     <script src="./lib/ace.js"></script>
     <script src="./lib/ext-language_tools.js"></script>
-    <script src="./lib/theme-monokai.js"></script>
     <script src="./lib/mode-sql.js"></script>
     <script src="./lib/sql-formatter.min.js"></script>
     <script defer type="module" src="./main.js"></script>
@@ -14,15 +14,64 @@
   </head>
   <body>
     <div class="app">
-      <header class="header">
-        <section class="btns">
-          <button id="format" class="btn primary">格式化</button>
-          <button id="compress" class="btn">压缩</button>
-          <button id="copy" class="btn">复制</button>
-          <button id="clear" class="btn">清空</button>
-        </section>
-      </header>
+      <form action="#" class="options pure-form pure-form-stacked">
+        <span class="option">
+          <label for="language">语言：</label>
+          <select id="language">
+            <option value="sql">SQL</option>
+            <!-- dialects -->
+            <option value="redshift">AWS Redshift</option>
+            <option value="bigquery">BigQuery</option>
+            <option value="db2">DB2</option>
+            <option value="hive">Hive</option>
+            <option value="mariadb">MariaDB</option>
+            <option value="mysql">MySQL</option>
+            <option value="n1ql">N1QL</option>
+            <option value="plsql">PL/SQL</option>
+            <option value="postgresql">PostgreSQL</option>
+            <option value="singlestoredb">SingleStoreDB</option>
+            <option value="snowflake">Snowflake</option>
+            <option value="spark">Spark</option>
+            <option value="sqlite">SQLite</option>
+            <option value="tsql">Transact-SQL</option>
+            <option value="trino">Trino</option>
+          </select>
+        </span>
+        <span class="option">
+          <label for="tabWidth">空格大小：</label>
+          <input
+            type="number"
+            id="tabWidth"
+            name="tabWidth"
+            min="1"
+            max="80"
+            value="2"
+          />
+        </span>
+        <span class="option">
+          <label for="keywordCase">大小写：</label>
+          <select id="keywordCase">
+            <option value="preserve">自动</option>
+            <option value="upper">大写</option>
+            <option value="lower">小写</option>
+          </select>
+        </span>
+      </form>
+      <div class="btns">
+        <button id="format" class="pure-button pure-button-primary">
+          格式化
+        </button>
+        <button id="compress" class="pure-button">压缩</button>
+        <button id="copy" class="pure-button">复制</button>
+        <button id="clear" class="pure-button">清空</button>
+      </div>
+      <article id="error" class="errot"></article>
       <main id="editor" class="editor"></main>
+      <footer class="editor-bar">
+        <span id="cursor" class="cursor">Ln 1, Col 1</span>
+        <span class="font" data-step="-1">T</span>
+        <span class="font" data-step="1">T</span>
+      </footer>
     </div>
   </body>
 </html>
